@@ -1,4 +1,6 @@
 class Person(object):
+    __slots__ = ('_name', '_age', '_gender')
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -25,10 +27,9 @@ class Person(object):
             print('%s正在玩斗地主.' % self.name)
 
 def main():
-    person = Person('王大��', 12)
+    person = Person('王大锤', 22)
     person.play()
-    person.name = '白元芳'
-    person.play()
+    person._gender = '男'
 
 if __name__ == '__main__':
     main()
